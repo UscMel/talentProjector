@@ -5,13 +5,18 @@ Author: Vikram Melchizedec
 
 """
 
+import random
 
+
+Print("Hello, welcome to the Stock simulator")
+Print("Please enter starting capital $$$$$")
 """
 Input: Amount(Monetary) , preferred system, Iterations amount
 Output: Ending amount for x amount of trials
 """
 def main():
-	
+
+
 """
 Meant to simuate a low risk low reward situation
 """
