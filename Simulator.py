@@ -8,19 +8,32 @@ Author: Vikram Melchizedec
 import random
 import sys
 import csv
-
+import matplotlib.pyplot as plt
 
 # Input: Amount(Monetary) , preferred system, Iterations amount
 # Output: Ending amount for x amount of trials
 def main():
     print("Hello, welcome to the Stock simulator")
     Capital = float(input("Pleae enter your starting capital $$$: "))
-    Iterations = float(input("How many iterations would you like to run? "))
+    Iterations = 50
+    Scenarios = float(input("How many scenarios should you run? "))
     print("Starting capital $$$ ",  Capital,"$")
     print("Iterations: ", Iterations)
+    print("# of runs: ", Scenarios )
     #LowValues = loloValue()
-    HighValues = hihiValue(Iterations)
-    print(*HighValues, sep = "\n")
+    i = 0
+    x = list()
+    while i < Iterations:
+        x.append(i)
+        i = i+1
+    j = 0
+    ReturnsList = List()
+    while j < Scenarios:	
+        HighValues = hihiValue(Iterations)
+        ReturnsList.append(MelSystemOne(Capital,Scenarios, Iterations,HighValues))
+        plt.plot(x,HighValues)
+        plt.show()
+        print(*HighValues, sep = "\n")
 
 # low risk low reward simulator for all iterations
 def loloValue():
@@ -34,7 +47,7 @@ def hihiValue(n):
 	HighValue = list()
 	HighValue.append(Value)
 	i = 1
-	multiplier = [50,66,80,100,125,150,200]
+	multiplier = [50,66,80,100,100, 125,150,200]
 	#While loop to generate stock values for all iterations
 	while (i < n):
 	    randMult = random.choice(multiplier)
@@ -54,8 +67,10 @@ def AllOnHigh():
 	return print("function run")
 
 #returns value of investmennt/capital if investor used the Mel system of investing.
-def MelSystemOne(Capital):
-	return print("function run")
+def MelSystemOne(Capital,TimesRun, Iterations, HighValues ):
+	Returns = capital
+    
+	return Returns
 
 def StockBroker(amountIN, Iteration ):
 	return Value
